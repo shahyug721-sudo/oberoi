@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; scroll-behavior: smooth; }
+    @keyframes heroUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes ruleGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    body { background: #f6f0e2; color: #1c2a4a; font-family: 'EB Garamond', serif; -webkit-font-smoothing: antialiased; }
+  </style>
+</helmet>
+
+<!-- ===== NAV ===== -->
+<nav style="display: flex; align-items: center; justify-content: space-between; padding: 22px 48px; border-bottom: 1px solid #1c2a4a33;">
+  <a href="Home C - Heritage.dc.html" style="font-size: 20px; font-style: italic; font-weight: 500; color: #1c2a4a; text-decoration: none;">Oberoi Enterprise</a>
+  <div style="display: flex; gap: 8px; align-items: center; font-family: 'Barlow', sans-serif;">
+    <a href="Products.dc.html" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px;" style-hover="color: #9c7c38;">PRODUCTS</a>
+    <a href="#range" onClick="{{ goRange }}" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px;" style-hover="color: #9c7c38;">RANGE</a>
+    <a href="Contact.dc.html" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px;" style-hover="color: #9c7c38;">CONTACT</a>
+    <a href="{{ quoteHref }}" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #f6f0e2; background: #1c2a4a; text-decoration: none; padding: 11px 24px; border-radius: 2px; margin-left: 10px; transition: background 0.2s;" style-hover="background: #9c7c38;" style-active="transform: translateY(1px);">ENQUIRE</a>
+  </div>
+</nav>
+
+<!-- ===== MASTHEAD ===== -->
+<header style="text-align: center; padding: 90px 32px 70px; border-bottom: 1px solid #1c2a4a33;">
+  <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #9c7c38; margin-bottom: 26px; animation: fadeIn 0.7s ease 0.05s both;">ESTD — BHANDUP · MUMBAI</div>
+  <div style="width: 120px; height: 1px; background: #9c7c38; margin: 0 auto 8px; animation: ruleGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;"></div>
+  <div style="width: 64px; height: 1px; background: #9c7c38; margin: 0 auto 34px; animation: ruleGrow 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;"></div>
+  <h1 style="margin: 0; font-size: clamp(58px, 8vw, 128px); font-weight: 500; font-style: italic; line-height: 0.95; letter-spacing: -0.02em; animation: heroUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;">Oberoi Enterprise</h1>
+  <div style="margin-top: 26px; font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.28em; color: #52618a; animation: heroUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;">MANUFACTURERS &amp; IMPORTERS OF EXCLUSIVE HARDWARE FITTINGS</div>
+  <p style="margin: 30px auto 0; max-width: 560px; font-size: 19px; line-height: 1.6; color: #3a4668; animation: heroUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;">Door magnets, hinges, locks and handles — three hundred coded fittings, supplied by the piece or by the container, from our house in Mumbai to workshops the world over.</p>
+  <div style="display: flex; gap: 16px; justify-content: center; margin-top: 38px; font-family: 'Barlow', sans-serif; animation: heroUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;">
+    <a href="Products.dc.html" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #f6f0e2; background: #1c2a4a; text-decoration: none; padding: 15px 34px; border-radius: 2px; transition: background 0.2s;" style-hover="background: #9c7c38;" style-active="transform: translateY(1px);">BROWSE THE RANGE</a>
+    <a href="{{ pdfHref }}" download="Oberoi Enterprise Catalogue.pdf" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #1c2a4a; border: 1px solid #1c2a4a; text-decoration: none; padding: 15px 34px; border-radius: 2px; transition: all 0.2s;" style-hover="background: #1c2a4a; color: #f6f0e2;" style-active="transform: translateY(1px);">CATALOGUE PDF</a>
+  </div>
+  <div style="margin-top: 44px; font-size: 16px; font-style: italic; color: #9c7c38; animation: fadeIn 1s ease 0.95s both;">"name stand's quality"</div>
+</header>
+
+<!-- ===== THREE HOUSES ===== -->
+<section style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #1c2a4a33;">
+  <div style="padding: 52px 44px; border-right: 1px solid #1c2a4a33; transition: background 0.3s;" style-hover="background: #efe7d3;">
+    <div style="font-size: 44px; font-style: italic; color: #9c7c38; line-height: 1;">I.</div>
+    <div style="font-size: 26px; font-weight: 500; margin-top: 14px;">Manufacture</div>
+    <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Fittings made to our own patterns — magnet series, hinges and pulls in stainless, antique brass, chrome and rose gold.</p>
+  </div>
+  <div style="padding: 52px 44px; border-right: 1px solid #1c2a4a33; transition: background 0.3s;" style-hover="background: #efe7d3;">
+    <div style="font-size: 44px; font-style: italic; color: #9c7c38; line-height: 1;">II.</div>
+    <div style="font-size: 26px; font-weight: 500; margin-top: 14px;">Import &amp; Export</div>
+    <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Exclusive ranges brought in, our own shipped out — documentation and logistics handled from Mumbai to your port.</p>
+  </div>
+  <div style="padding: 52px 44px; transition: background 0.3s;" style-hover="background: #efe7d3;">
+    <div style="font-size: 44px; font-style: italic; color: #9c7c38; line-height: 1;">III.</div>
+    <div style="font-size: 26px; font-weight: 500; margin-top: 14px;">Supply</div>
+    <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Hardware stores, furniture makers, glass fabricators and builders — quote a code and quantity, we do the rest.</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT THE HOUSE ===== -->
+<section id="about" data-screen-label="about" style="border-bottom: 1px solid #1c2a4a33;">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 84px 48px; box-sizing: border-box; display: grid; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: start;">
+    <div>
+      <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #9c7c38; margin-bottom: 18px;">THE HOUSE</div>
+      <h2 style="margin: 0 0 22px; font-size: clamp(34px, 4vw, 54px); font-weight: 500; font-style: italic; line-height: 1.05;">A Mumbai house of hardware</h2>
+      <p style="margin: 0 0 18px; font-size: 18px; line-height: 1.65; color: #3a4668;">Oberoi Enterprise works from Gurunanak Udyog Bhavan in Bhandup — manufacturers and importers of exclusive hardware fittings. Fittings are made to our own patterns, exclusive ranges are brought in from abroad, and everything leaves the house under one mark.</p>
+      <p style="margin: 0; font-size: 18px; line-height: 1.65; color: #3a4668;">Every fitting in the range carries a code. Quote it with a quantity and the price comes back the same way — hardware stores, furniture makers, glass fabricators and builders order by the piece or by the container, in stainless steel, antique brass, chrome, black and rose gold.</p>
+    </div>
+    <div style="display: flex; flex-direction: column; border-top: 1px solid #1c2a4a33; margin-top: 10px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 4px; border-bottom: 1px solid #1c2a4a33;">
+        <span style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; flex: none;">TRADE</span>
+        <span style="font-size: 17px; text-align: right;">Manufacture, import &amp; export, supply</span>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 4px; border-bottom: 1px solid #1c2a4a33;">
+        <span style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; flex: none;">RANGE</span>
+        <span style="font-size: 17px; text-align: right;">13 categories · 300+ coded fittings</span>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 4px; border-bottom: 1px solid #1c2a4a33;">
+        <span style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; flex: none;">FINISHES</span>
+        <span style="font-size: 17px; text-align: right;">SS · antique brass · chrome · black · rose gold</span>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 4px; border-bottom: 1px solid #1c2a4a33;">
+        <span style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; flex: none;">SUPPLY</span>
+        <span style="font-size: 17px; text-align: right;">Wholesale, retail &amp; export — piece or container</span>
+      </div>
+      <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 15px 4px; border-bottom: 1px solid #1c2a4a33;">
+        <span style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; flex: none;">MOTTO</span>
+        <span style="font-size: 17px; font-style: italic; text-align: right;">"name stand's quality"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RANGE LEDGER ===== -->
+<section id="range" data-screen-label="range" style="padding: 80px 48px 90px; max-width: 1080px; margin: 0 auto; box-sizing: border-box;">
+  <div style="text-align: center; margin-bottom: 52px;">
+    <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #9c7c38; margin-bottom: 14px;">THE RANGE</div>
+    <h2 style="margin: 0; font-size: clamp(38px, 4.6vw, 64px); font-weight: 500; font-style: italic; line-height: 1;">Thirteen categories, every fitting coded</h2>
+  </div>
+  <div style="column-count: 2; column-gap: 64px; border-top: 1px solid #1c2a4a33;">
+    <sc-for list="{{ categories }}" as="c" hint-placeholder-count="13">
+      <a href="Category.dc.html?cat={{ c.slug }}" style="display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 16px 4px; border-bottom: 1px solid #1c2a4a33; text-decoration: none; color: #1c2a4a; break-inside: avoid; transition: color 0.2s, padding-left 0.2s;" style-hover="color: #9c7c38; padding-left: 14px;">
+        <span style="display: flex; align-items: baseline; gap: 16px;">
+          <span style="font-family: 'Barlow', sans-serif; font-size: 12px; color: #9c7c38;">{{ c.no }}</span>
+          <span style="font-size: 21px; font-weight: 500;">{{ c.name }}</span>
+        </span>
+        <span style="font-family: 'Barlow', sans-serif; font-size: 12px; color: #52618a; white-space: nowrap;">{{ c.count }} products</span>
+      </a>
+    </sc-for>
+  </div>
+  <div style="text-align: center; margin-top: 44px;">
+    <a href="Products.dc.html" style="font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #1c2a4a; border: 1px solid #1c2a4a; text-decoration: none; padding: 14px 34px; border-radius: 2px; transition: all 0.2s;" style-hover="background: #1c2a4a; color: #f6f0e2;">VIEW ALL PRODUCTS</a>
+  </div>
+</section>
+
+<!-- ===== FROM THE CATALOGUE ===== -->
+<section style="background: linear-gradient(180deg, #121d36 0%, #1c2a4a 55%, #121d36 100%); padding: 84px 0 64px; overflow: hidden; position: relative;">
+  <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 62% 46% at 50% 64%, rgba(156, 124, 56, 0.18), transparent 70%); pointer-events: none;"></div>
+  <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 166, 89, 0.55), transparent);"></div>
+  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 166, 89, 0.55), transparent);"></div>
+  <div style="text-align: center; padding: 0 48px; position: relative;">
+    <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #c9a659; margin-bottom: 14px;">FROM THE CATALOGUE</div>
+    <h2 style="margin: 0; font-size: clamp(34px, 4vw, 54px); font-weight: 500; font-style: italic; line-height: 1.05; color: #f6f0e2;">The signature shelves</h2>
+    <div style="margin-top: 14px; font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.24em; color: rgba(246, 240, 226, 0.5);">SCROLL TO SPIN THE SHELF — CLICK A PLATE TO OPEN ITS CATEGORY</div>
+  </div>
+  <div style="position: relative; height: 420px;">{{ shelfGallery }}</div>
+</section>
+
+<!-- ===== HOW ORDERING WORKS ===== -->
+<section style="border-top: 1px solid #1c2a4a33; padding-top: 80px;">
+  <div style="text-align: center; margin-bottom: 54px; padding: 0 32px;">
+    <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #9c7c38; margin-bottom: 14px;">ORDERING</div>
+    <h2 style="margin: 0; font-size: clamp(34px, 4vw, 54px); font-weight: 500; font-style: italic; line-height: 1.05;">From code to consignment</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-top: 1px solid #1c2a4a33;">
+    <div style="padding: 52px 44px; border-right: 1px solid #1c2a4a33; transition: background 0.3s;" style-hover="background: #efe7d3;">
+      <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; color: #9c7c38;">STEP 01</div>
+      <div style="font-size: 26px; font-weight: 500; margin-top: 12px;">Browse</div>
+      <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Leaf through the thirteen categories here, or download the catalogue PDF — every fitting is pictured and coded.</p>
+    </div>
+    <div style="padding: 52px 44px; border-right: 1px solid #1c2a4a33; transition: background 0.3s;" style-hover="background: #efe7d3;">
+      <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; color: #9c7c38;">STEP 02</div>
+      <div style="font-size: 26px; font-weight: 500; margin-top: 12px;">Enquire</div>
+      <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Send codes and quantities by email or WhatsApp — wholesale, retail and export enquiries all welcome.</p>
+    </div>
+    <div style="padding: 52px 44px; transition: background 0.3s;" style-hover="background: #efe7d3;">
+      <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; color: #9c7c38;">STEP 03</div>
+      <div style="font-size: 26px; font-weight: 500; margin-top: 12px;">Dispatch</div>
+      <p style="margin: 12px 0 0; font-family: 'Barlow', sans-serif; font-size: 14px; line-height: 1.6; color: #52618a;">Supplied by the piece or by the container — packed in Bhandup and shipped from Mumbai to your port.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT + CTA ===== -->
+<section id="contact" data-screen-label="contact" style="background: #1c2a4a; color: #f6f0e2; padding: 84px 48px;">
+  <div style="max-width: 1080px; margin: 0 auto;">
+    <div style="text-align: center;">
+      <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.32em; color: #9c7c38; margin-bottom: 18px;">WRITE, RING OR VISIT</div>
+      <h2 style="margin: 0 0 12px; font-size: clamp(32px, 3.8vw, 52px); font-weight: 500; font-style: italic; line-height: 1.05;">Tell us the code, we'll quote the lot.</h2>
+      <p style="margin: 0 0 34px; font-family: 'Barlow', sans-serif; font-size: 14px; color: #f6f0e2b3;">Wholesale, retail or export — mention codes and quantities for the fastest reply.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; font-family: 'Barlow', sans-serif;">
+        <a href="Contact.dc.html" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #1c2a4a; background: #f6f0e2; text-decoration: none; padding: 15px 34px; border-radius: 2px; transition: background 0.2s;" style-hover="background: #e5dcc4;" style-active="transform: translateY(1px);">SEND AN ENQUIRY</a>
+        <a href="{{ waLink }}" target="_blank" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #f6f0e2; border: 1px solid #f6f0e280; text-decoration: none; padding: 15px 34px; border-radius: 2px; transition: border-color 0.2s;" style-hover="border-color: #f6f0e2;" style-active="transform: translateY(1px);">WHATSAPP</a>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 64px; border-top: 1px solid rgba(246, 240, 226, 0.22); padding-top: 44px;">
+      <div>
+        <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; margin-bottom: 10px;">PHONE</div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <sc-for list="{{ phones }}" as="ph" hint-placeholder-count="3">
+            <a href="tel:{{ ph.tel }}" style="font-size: 18px; color: #f6f0e2; text-decoration: none; transition: color 0.2s;" style-hover="color: #cbb06a;">{{ ph.label }}</a>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; margin-bottom: 10px;">EMAIL &amp; CATALOGUE</div>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <a href="mailto:{{ email }}" style="font-size: 18px; color: #f6f0e2; text-decoration: none; transition: color 0.2s;" style-hover="color: #cbb06a;">{{ email }}</a>
+          <a href="{{ pdfHref }}" download="Oberoi Enterprise Catalogue.pdf" style="font-size: 18px; color: #f6f0e2; text-decoration: none; transition: color 0.2s;" style-hover="color: #cbb06a;">Download the full PDF ↓</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: #9c7c38; margin-bottom: 10px;">ADDRESS</div>
+        <div style="font-size: 18px; line-height: 1.5; color: #f6f0e2;">{{ address }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="padding: 26px 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'Barlow', sans-serif; font-size: 12px; color: #52618a;">
+  <span>© 2026 Oberoi Enterprise — name stand's quality</span>
+  <span>{{ address }}</span>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ready: false };
+  async componentDidMount() {
+    this._rot = 0;
+    this._scrolling = false;
+    this._onScroll = () => {
+      this._scrolling = true;
+      if (this._scrollT) clearTimeout(this._scrollT);
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      this._rot = h > 0 ? (window.scrollY / h) * 360 : 0;
+      this._scrollT = setTimeout(() => { this._scrolling = false; }, 150);
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    const loop = () => {
+      if (!this._scrolling) this._rot += 0.05;
+      this._applyShelf();
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+    this._db = await import('./oberoi-catalog.js');
+    this.setState({ ready: true });
+  }
+
+  componentWillUnmount() {
+    if (this._raf) cancelAnimationFrame(this._raf);
+    if (this._scrollT) clearTimeout(this._scrollT);
+    window.removeEventListener('scroll', this._onScroll);
+  }
+
+  _applyShelf() {
+    if (this._ringEl) this._ringEl.style.transform = 'rotateY(' + this._rot + 'deg)';
+    const els = this._cardEls;
+    if (!els) return;
+    const n = els.length;
+    for (let i = 0; i < n; i++) {
+      const el = els[i];
+      if (!el) continue;
+      const rel = (((i * 360 / n) + this._rot) % 360 + 360) % 360;
+      const norm = rel > 180 ? 360 - rel : rel;
+      el.style.opacity = String(Math.max(0.25, 1 - norm / 180));
+      el.style.zIndex = String(Math.round(100 - norm));
+    }
+  }
+
+  buildShelf() {
+    const db = this._db;
+    if (!db) return null;
+    if (this._shelfEl) return this._shelfEl;
+    const R = React.createElement;
+    const items = db.CATEGORIES.filter((c) => c.img).map((c) => ({
+      slug: c.slug, no: c.no, name: c.name, img: c.img,
+      count: db.PRODUCTS.filter((p) => p.category === c.slug).length,
+    }));
+    const n = items.length;
+    if (!n) return null;
+    const cardW = 200, cardH = 278;
+    const radius = Math.max(380, Math.round(((cardW + 40) * n) / (2 * Math.PI)));
+    this._cardEls = new Array(n);
+    const cards = items.map((c, i) => R('a', {
+      key: c.slug,
+      href: 'Category.dc.html?cat=' + c.slug,
+      ref: (el) => { this._cardEls[i] = el; },
+      style: {
+        position: 'absolute', left: '50%', top: '50%',
+        width: cardW + 'px', height: cardH + 'px',
+        marginLeft: (-cardW / 2) + 'px', marginTop: (-cardH / 2) + 'px',
+        transform: 'rotateY(' + (i * 360 / n) + 'deg) translateZ(' + radius + 'px)',
+        textDecoration: 'none', color: '#1c2a4a', display: 'block',
+      },
+    },
+      R('div', { style: { width: '100%', height: '100%', boxSizing: 'border-box', background: '#f6f0e2', border: '1px solid rgba(201, 166, 89, 0.55)', borderRadius: '2px', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 26px 64px rgba(4, 9, 22, 0.55)' } },
+        R('img', { src: c.img, alt: c.name, style: { width: '100%', height: '168px', objectFit: 'cover', objectPosition: 'top', display: 'block', borderBottom: '1px solid rgba(28, 42, 74, 0.2)', flex: 'none' } }),
+        R('div', { style: { padding: '12px 14px', display: 'flex', flexDirection: 'column', gap: '4px', flex: '1', background: '#131e36', borderTop: '1px solid rgba(201, 166, 89, 0.4)' } },
+          R('div', { style: { fontFamily: "'Barlow', sans-serif", fontSize: '10px', fontWeight: 600, letterSpacing: '0.2em', color: '#c9a659' } }, 'NO. ' + c.no),
+          R('div', { style: { fontSize: '18px', fontWeight: 500, fontStyle: 'italic', lineHeight: 1.12, color: '#f6f0e2' } }, c.name),
+          R('div', { style: { fontFamily: "'Barlow', sans-serif", fontSize: '10px', color: 'rgba(246, 240, 226, 0.6)', marginTop: 'auto' } }, c.count + ' products')
+        )
+      )
+    ));
+    this._shelfEl = R('div', { style: { position: 'absolute', inset: '0', perspective: '1900px', perspectiveOrigin: '50% 42%' } },
+      R('div', { ref: (el) => { this._ringEl = el; }, style: { position: 'absolute', inset: '0', transformStyle: 'preserve-3d', transform: 'rotateY(0deg)' } }, cards)
+    );
+    return this._shelfEl;
+  }
+  scrollTo(id, e) {
+    if (e) e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 20, behavior: 'smooth' });
+  }
+  renderVals() {
+    const db = this._db;
+    return {
+      goRange: (e) => this.scrollTo('range', e),
+      quoteHref: db ? db.enquireHref(null) : '#',
+      pdfHref: db ? db.SITE.pdf : '#',
+      waLink: db ? db.waHref(null) : '#',
+      address: db ? db.SITE.address : '',
+      email: db ? db.SITE.email : '',
+      phones: db ? db.SITE.phones.map((p) => ({ label: p, tel: p.replace(/[^+\d]/g, '') })) : [],
+      categories: db ? db.CATEGORIES.map((c) => ({ ...c, count: db.PRODUCTS.filter((p) => p.category === c.slug).length })) : [],
+      shelfGallery: this.buildShelf(),
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { background: #0d0e10; color: #f2f2f2; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  </style>
+</helmet>
+
+<!-- ===== NAV ===== -->
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: linear-gradient(to bottom, rgba(13,14,16,0.95), rgba(13,14,16,0));">
+  <a href="Home B - Showroom.dc.html" style="font-family: 'Archivo Black', sans-serif; font-size: 16px; color: #f2f2f2; text-decoration: none; letter-spacing: 0.02em;">OBEROI<span style="color: #ff5c00;">.</span>ENT</a>
+  <div style="display: flex; gap: 6px; align-items: center;">
+    <a href="Products.dc.html" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: #b9b9b9; text-decoration: none; padding: 8px 14px;" style-hover="color: #ffffff;">PRODUCTS</a>
+    <a href="#range" onClick="{{ goRange }}" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: #b9b9b9; text-decoration: none; padding: 8px 14px;" style-hover="color: #ffffff;">RANGE</a>
+    <a href="Contact.dc.html" style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; color: #b9b9b9; text-decoration: none; padding: 8px 14px;" style-hover="color: #ffffff;">CONTACT</a>
+    <a href="{{ quoteHref }}" style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; background: #ff5c00; color: #0d0e10; text-decoration: none; padding: 12px 22px; margin-left: 8px; transition: background 0.15s;" style-hover="background: #ff7d33;">GET A QUOTE</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header style="min-height: 100vh; display: grid; grid-template-columns: 1.35fr 1fr; align-items: stretch; box-sizing: border-box; padding: 110px 40px 0; gap: 40px;">
+  <div style="display: flex; flex-direction: column; justify-content: center;">
+    <div style="display: inline-flex; align-items: center; gap: 10px; margin-bottom: 28px;">
+      <span style="width: 34px; height: 3px; background: #ff5c00;"></span>
+      <span style="font-size: 12.5px; font-weight: 600; letter-spacing: 0.22em; color: #b9b9b9;">MANUFACTURER · IMPORTER · EXPORTER — MUMBAI</span>
+    </div>
+    <h1 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(56px, 7.6vw, 124px); line-height: 0.92; letter-spacing: -0.02em; text-transform: uppercase;">Oberoi<br>Enterprise</h1>
+    <p style="margin: 26px 0 0; max-width: 460px; font-size: 16px; line-height: 1.55; color: #b9b9b9;">Heavy-stocked hardware fittings — door magnets, hinges, locks and handles in SS, antique brass, chrome and rose gold. Coded for the counter, priced for the container.</p>
+    <div style="display: flex; gap: 14px; margin-top: 34px;">
+      <a href="Products.dc.html" style="background: #f2f2f2; color: #0d0e10; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; padding: 16px 32px; text-decoration: none; transition: background 0.15s;" style-hover="background: #ff5c00;">BROWSE PRODUCTS</a>
+      <a href="{{ pdfHref }}" download="Oberoi Enterprise Catalogue.pdf" style="border: 1.5px solid #3a3b3e; color: #f2f2f2; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; padding: 16px 32px; text-decoration: none; transition: border-color 0.15s;" style-hover="border-color: #ff5c00;">CATALOGUE ↓</a>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 16px; padding-bottom: 40px; padding-top: 10px;">
+    <a href="Category.dc.html?cat=door-magnets" style="position: relative; overflow: hidden; display: block; border: 1px solid #26272a;">
+      <img src="assets/cat-magnets.jpg" alt="door magnets" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); transition: filter 0.3s;" style-hover="filter: grayscale(0);">
+      <span style="position: absolute; left: 14px; bottom: 12px; background: #0d0e10; color: #f2f2f2; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 6px 12px;">01 — DOOR MAGNETS</span>
+    </a>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <a href="Category.dc.html?cat=glass-door-handles" style="position: relative; overflow: hidden; display: block; border: 1px solid #26272a;">
+        <img src="assets/cat-handles.jpg" alt="handles" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); transition: filter 0.3s;" style-hover="filter: grayscale(0);">
+        <span style="position: absolute; left: 14px; bottom: 12px; background: #0d0e10; color: #f2f2f2; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 6px 12px;">08 — HANDLES</span>
+      </a>
+      <a href="Category.dc.html?cat=hinges" style="position: relative; overflow: hidden; display: block; border: 1px solid #26272a;">
+        <img src="assets/cat-hinges.jpg" alt="hinges" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; filter: grayscale(1) contrast(1.05); transition: filter 0.3s;" style-hover="filter: grayscale(0);">
+        <span style="position: absolute; left: 14px; bottom: 12px; background: #0d0e10; color: #f2f2f2; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; padding: 6px 12px;">04 — HINGES</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== MARQUEE ===== -->
+<div style="border-top: 1px solid #26272a; border-bottom: 1px solid #26272a; overflow: hidden; background: #ff5c00;">
+  <div style="display: flex; width: max-content; animation: marquee 22s linear infinite; padding: 12px 0;">
+    <span style="font-family: 'Archivo Black', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #0d0e10; white-space: nowrap;">DOOR MAGNETS ✕ HINGES ✕ LOCKS ✕ GLASS DOOR HANDLES ✕ KITCHEN ZALLI ✕ CONCEAL FITTINGS ✕ KNOBS ✕ CHANNELS &amp; WHEELS ✕ MAIN DOOR HANDLES ✕ CABINET HANDLES ✕ GLASS FITTINGS ✕ CURTAIN HARDWARE ✕&nbsp;</span>
+    <span style="font-family: 'Archivo Black', sans-serif; font-size: 15px; letter-spacing: 0.1em; color: #0d0e10; white-space: nowrap;">DOOR MAGNETS ✕ HINGES ✕ LOCKS ✕ GLASS DOOR HANDLES ✕ KITCHEN ZALLI ✕ CONCEAL FITTINGS ✕ KNOBS ✕ CHANNELS &amp; WHEELS ✕ MAIN DOOR HANDLES ✕ CABINET HANDLES ✕ GLASS FITTINGS ✕ CURTAIN HARDWARE ✕&nbsp;</span>
+  </div>
+</div>
+
+<!-- ===== RANGE GRID ===== -->
+<section id="range" data-screen-label="range" style="padding: 90px 40px 100px;">
+  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 48px;">
+    <h2 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-size: clamp(36px, 4.6vw, 68px); letter-spacing: -0.01em; line-height: 0.95; text-transform: uppercase;">The Range</h2>
+    <a href="Products.dc.html" style="font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #ff5c00; text-decoration: none;" style-hover="color: #ff7d33;">ALL PRODUCTS →</a>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px;">
+    <sc-for list="{{ categories }}" as="c" hint-placeholder-count="13">
+      <a href="Category.dc.html?cat={{ c.slug }}" style="border: 1px solid #26272a; padding: 22px 22px 18px; display: flex; flex-direction: column; gap: 30px; text-decoration: none; color: #f2f2f2; background: #121316; transition: border-color 0.2s, background 0.2s;" style-hover="border-color: #ff5c00; background: #16171b;">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <span style="font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: #ff5c00;">{{ c.no }}</span>
+          <span style="font-size: 11px; color: #6f7075;">{{ c.count }} SKU</span>
+        </div>
+        <div>
+          <div style="font-family: 'Archivo Black', sans-serif; font-size: 19px; line-height: 1.15; text-transform: uppercase; letter-spacing: 0.01em;">{{ c.name }}</div>
+          <div style="font-size: 12.5px; color: #8b8c91; margin-top: 8px; line-height: 1.5;">{{ c.blurb }}</div>
+        </div>
+      </a>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section style="border-top: 1px solid #26272a; padding: 80px 40px; text-align: center;">
+  <h2 style="margin: 0 0 12px; font-family: 'Archivo Black', sans-serif; font-size: clamp(32px, 4vw, 58px); text-transform: uppercase; line-height: 1;">Tell us the code.</h2>
+  <p style="margin: 0 0 32px; font-size: 15px; color: #8b8c91;">200 × M1 round magnet · 50 × GD-2 'D' type handle — that's all we need.</p>
+  <div style="display: flex; gap: 14px; justify-content: center;">
+    <a href="Contact.dc.html" style="background: #ff5c00; color: #0d0e10; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; padding: 16px 36px; text-decoration: none; transition: background 0.15s;" style-hover="background: #ff7d33;">SEND ENQUIRY</a>
+    <a href="{{ waLink }}" target="_blank" style="border: 1.5px solid #3a3b3e; color: #f2f2f2; font-size: 14px; font-weight: 700; letter-spacing: 0.06em; padding: 16px 36px; text-decoration: none; transition: border-color 0.15s;" style-hover="border-color: #ff5c00;">WHATSAPP</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="border-top: 1px solid #26272a; padding: 22px 40px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #6f7075;">
+  <span>© 2026 OBEROI ENTERPRISE — NAME STAND'S QUALITY</span>
+  <span>{{ address }}</span>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ready: false };
+  async componentDidMount() {
+    this._db = await import('./oberoi-catalog.js');
+    this.setState({ ready: true });
+  }
+  scrollTo(id, e) {
+    if (e) e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 60, behavior: 'smooth' });
+  }
+  renderVals() {
+    const db = this._db;
+    return {
+      goRange: (e) => this.scrollTo('range', e),
+      quoteHref: db ? db.enquireHref(null) : '#',
+      pdfHref: db ? db.SITE.pdf : '#',
+      waLink: db ? db.waHref(null) : '#',
+      address: db ? db.SITE.address : '',
+      categories: db ? db.CATEGORIES.map((c) => ({ ...c, count: db.PRODUCTS.filter((p) => p.category === c.slug).length })) : [],
+    };
+  }
+}
+</script>
+</body>
+</html>

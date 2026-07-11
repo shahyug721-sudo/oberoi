@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    html, body { height: 100%; margin: 0; scroll-behavior: smooth; }
+    body { background: #f6f0e2; color: #1c2a4a; font-family: 'EB Garamond', serif; -webkit-font-smoothing: antialiased; }
+    a { color: #1c2a4a; } a:hover { color: #9c7c38; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</helmet>
+
+<!-- ===== NAV ===== -->
+<nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 18px 48px; border-bottom: 1px solid #1c2a4a33; background: rgba(246, 240, 226, 0.94); backdrop-filter: blur(8px);">
+  <a href="Home C - Heritage.dc.html" style="font-size: 20px; font-style: italic; font-weight: 500; color: #1c2a4a; text-decoration: none;">Oberoi Enterprise</a>
+  <div style="display: flex; gap: 8px; align-items: center; font-family: 'Barlow', sans-serif;">
+    <a href="Home C - Heritage.dc.html" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px; transition: color 0.2s;" style-hover="color: #9c7c38;">HOME</a>
+    <a href="Products.dc.html" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px; transition: color 0.2s;" style-hover="color: #9c7c38;">PRODUCTS</a>
+    <a href="Contact.dc.html" style="font-size: 13px; font-weight: 500; letter-spacing: 0.14em; color: #1c2a4a; text-decoration: none; padding: 8px 14px; transition: color 0.2s;" style-hover="color: #9c7c38;">CONTACT</a>
+    <a href="{{ enquire }}" style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #f6f0e2; background: #1c2a4a; text-decoration: none; padding: 11px 24px; border-radius: 2px; margin-left: 10px; transition: background 0.2s;" style-hover="background: #9c7c38;" style-active="transform: translateY(1px);">ENQUIRE</a>
+  </div>
+</nav>
+
+<!-- ===== PRODUCT DETAIL ===== -->
+<section style="padding: 48px 48px 90px; animation: fadeUp 0.7s ease both;">
+  <div style="max-width: 1160px; margin: 0 auto;">
+    <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: #52618a; margin-bottom: 34px;">
+      <a href="Home C - Heritage.dc.html" style="color: #52618a; text-decoration: none; transition: color 0.2s;" style-hover="color: #9c7c38;">HOME</a>
+      <span> / </span>
+      <a href="Products.dc.html" style="color: #52618a; text-decoration: none; transition: color 0.2s;" style-hover="color: #9c7c38;">PRODUCTS</a>
+      <span> / </span>
+      <a href="{{ catHref }}" style="color: #52618a; text-decoration: none; transition: color 0.2s;" style-hover="color: #9c7c38;">{{ catNameUpper }}</a>
+      <span> / {{ nameUpper }}</span>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 420px 1fr; gap: 56px; align-items: start;">
+      <div style="position: sticky; top: 100px; display: flex; flex-direction: column; gap: 14px;">
+        <img src="{{ imgSrc }}" alt="{{ name }}" style="width: 100%; height: 340px; object-fit: cover; object-position: top; border: 1px solid #1c2a4a33; border-radius: 2px; display: block; background: #fffdf6; box-sizing: border-box;">
+        <div style="font-family: 'Barlow', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: #52618a; text-align: center;">CATALOGUE PLATE — {{ catNameUpper }} RANGE</div>
+        <a href="{{ enquire }}" style="text-align: center; font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; background: #1c2a4a; color: #f6f0e2; border-radius: 2px; padding: 15px 30px; text-decoration: none; transition: background 0.2s;" style-hover="background: #9c7c38;" style-active="transform: translateY(1px);">ENQUIRE ABOUT THIS PRODUCT</a>
+        <a href="{{ wa }}" target="_blank" style="text-align: center; font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 0.14em; color: #1c2a4a; border: 1px solid #1c2a4a; border-radius: 2px; padding: 15px 30px; text-decoration: none; transition: background 0.2s, color 0.2s;" style-hover="background: #1c2a4a; color: #f6f0e2;" style-active="transform: translateY(1px);">ASK ON WHATSAPP</a>
+      </div>
+
+      <div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 18px; font-family: 'Barlow', sans-serif;">
+          <span style="background: #1c2a4a; color: #f6f0e2; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; border-radius: 2px; padding: 7px 16px;">{{ codes }}</span>
+          <a href="{{ catHref }}" style="font-size: 12px; font-weight: 500; letter-spacing: 0.1em; color: #52618a; text-decoration: none; border: 1px solid #1c2a4a33; border-radius: 2px; padding: 7px 16px; transition: color 0.2s, border-color 0.2s;" style-hover="color: #9c7c38; border-color: #9c7c38;">{{ catNameUpper }}</a>
+        </div>
+        <h1 style="margin: 0 0 14px; font-size: clamp(40px, 4.8vw, 64px); font-weight: 500; font-style: italic; line-height: 1.02;">{{ name }}</h1>
+        <p style="margin: 0 0 30px; max-width: 560px; font-size: 18px; line-height: 1.6; color: #3a4668;">{{ blurb }}</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 36px;">
+          <div style="background: #fffdf6; border: 1px solid #1c2a4a33; border-radius: 2px; padding: 18px 20px;">
+            <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; color: #9c7c38; letter-spacing: 0.14em; margin-bottom: 6px;">AVAILABLE SIZES</div>
+            <div style="font-size: 17px; font-weight: 500;">{{ sizes }}</div>
+          </div>
+          <div style="background: #fffdf6; border: 1px solid #1c2a4a33; border-radius: 2px; padding: 18px 20px;">
+            <div style="font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 600; color: #9c7c38; letter-spacing: 0.14em; margin-bottom: 6px;">FINISHES</div>
+            <div style="font-size: 17px; font-weight: 500;">{{ finishes }}</div>
+          </div>
+        </div>
+
+        <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; color: #9c7c38; letter-spacing: 0.24em; margin-bottom: 14px;">VARIANTS &amp; ORDER CODES</div>
+        <div style="display: flex; flex-direction: column; margin-bottom: 40px; border-top: 1px solid #1c2a4a33;">
+          <sc-for list="{{ variants }}" as="v" hint-placeholder-count="4">
+            <div style="display: flex; align-items: baseline; gap: 18px; padding: 13px 4px; border-bottom: 1px solid #1c2a4a33; transition: background 0.2s;" style-hover="background: #efe7d3;">
+              <span style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; color: #9c7c38; letter-spacing: 0.06em; min-width: 72px;">{{ v.code }}</span>
+              <span style="font-size: 17px;">{{ v.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ hasRelated }}" hint-placeholder-val="{{ true }}">
+          <div style="font-family: 'Barlow', sans-serif; font-size: 12px; font-weight: 600; color: #9c7c38; letter-spacing: 0.24em; margin-bottom: 14px;">MORE IN {{ catNameUpper }}</div>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+              <a href="Product.dc.html?id={{ r.slug }}" style="font-size: 17px; color: #1c2a4a; text-decoration: none; border: 1px solid #1c2a4a33; border-radius: 2px; padding: 9px 20px; background: #fffdf6; transition: color 0.2s, border-color 0.2s;" style-hover="color: #9c7c38; border-color: #9c7c38;">{{ r.name }} →</a>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="border-top: 1px solid #1c2a4a33; padding: 26px 48px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-family: 'Barlow', sans-serif; font-size: 12px; color: #52618a;">
+  <span>© 2026 Oberoi Enterprise — name stand's quality</span>
+  <div style="display: flex; gap: 4px;">
+    <a href="Home C - Heritage.dc.html" style="color: #52618a; letter-spacing: 0.1em; text-decoration: none; padding: 6px 12px; transition: color 0.2s;" style-hover="color: #9c7c38;">HOME</a>
+    <a href="Products.dc.html" style="color: #52618a; letter-spacing: 0.1em; text-decoration: none; padding: 6px 12px; transition: color 0.2s;" style-hover="color: #9c7c38;">PRODUCTS</a>
+    <a href="Contact.dc.html" style="color: #52618a; letter-spacing: 0.1em; text-decoration: none; padding: 6px 12px; transition: color 0.2s;" style-hover="color: #9c7c38;">CONTACT</a>
+  </div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { ready: false };
+
+  async componentDidMount() {
+    this._db = await import('./oberoi-catalog.js');
+    this.setState({ ready: true });
+  }
+
+  renderVals() {
+    const db = this._db;
+    const slug = new URLSearchParams(location.search).get('id') || 'round-magnet';
+    const p = db ? (db.PRODUCTS.find((x) => x.slug === slug) || db.PRODUCTS[0]) : null;
+    const related = (db && p) ? db.PRODUCTS.filter((x) => x.category === p.category && x.slug !== p.slug).slice(0, 4) : [];
+    return {
+      name: p ? p.name : '',
+      nameUpper: p ? p.name.toUpperCase() : '',
+      codes: p ? p.codes : '',
+      blurb: p ? p.blurb : '',
+      sizes: p ? p.sizes : '',
+      finishes: p ? p.finishes : '',
+      variants: p ? p.variants : [],
+      imgSrc: (db && p) ? db.catImg(p.category) : '',
+      catNameUpper: (db && p) ? db.catName(p.category).toUpperCase() : '',
+      catHref: p ? 'Category.dc.html?cat=' + p.category : '#',
+      enquire: (db && p) ? db.enquireHref(p) : '#',
+      wa: (db && p) ? db.waHref(p) : '#',
+      related,
+      hasRelated: related.length > 0,
+    };
+  }
+}
+</script>
+</body>
+</html>
